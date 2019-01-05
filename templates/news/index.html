@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% load static %}   
 {% block content %}
+
     <div class="blog-grid-area gray-bg pt-100 pb-70">
         <div class="container">
             <div class="blog-grid-list">
                 <div class="row">
+                {%if news %}
+                    {% for new in news %}
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="blog-wrapper mb-30">
                             <div class="blog-thumb mb-25">
@@ -13,7 +16,7 @@
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>Auguest 25, 2018</span>
+                                    <span>Auguest 25, 2018 </span>
                                 </div>
                                 <h5><a href="news_details.html">Some say education is the process of gaining information is nation.</a></h5>
                                 <p>Belis nisl adipiscing sapien sed malesu diame lacus eget erat Cras mollis scele.</p>
@@ -22,8 +25,16 @@
                                 </div>
                             </div>
                         </div>
+                    </div>                    
+                    {% endfor %}
+                {%else%}
+                    <div class="col-md-12">
+                        <p>No news availabe</p>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
+                {% endif %}
+                
+
+                    {% comment %} <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="blog-wrapper mb-30">
                             <div class="blog-thumb mb-25">
                                 <a href="news_details.html"><img src="img/blog/blog_thumb_2.jpg" alt=""></a>
@@ -166,7 +177,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
                 </div>
                 <div class="row">
                     <div class="col-xl-12 text-center">
