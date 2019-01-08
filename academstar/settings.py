@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'academstar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'academstar_db',
+        'NAME': 'academstar',
         'USER': 'postgres',
         'PASSWORD': 'developer',
         'HOST': 'localhost'
